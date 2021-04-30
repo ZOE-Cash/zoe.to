@@ -79,7 +79,7 @@ export class Element {
     getCopyString(platform, link) {}
 	getInstallLinks(platform) {
 		switch (platform) {
-			case Platform.iOS: return [new AppleStoreLink('vector', 'id1083446067')];
+			// case Platform.iOS: return [new AppleStoreLink('vector', 'id1083446067')];
 			case Platform.Android: return [new PlayStoreLink('com.zoe.cash')];
 			default: return [new WebsiteLink("https://app.zoe.community")];
 		}
