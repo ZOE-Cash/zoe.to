@@ -22,7 +22,7 @@ import {LoadServerPolicyView} from "./policy/LoadServerPolicyView.js";
 export class RootView extends TemplateView {
 	render(t, vm) {
 		return t.div({className: "RootView"}, [
-			t.p(t.img({src: "images/logo.svg"})),
+			t.p(t.img({src: "images/logo.png"})),
 			t.mapView(vm => vm.openLinkViewModel, vm => vm ? new OpenLinkView(vm) : null),
 			t.mapView(vm => vm.createLinkViewModel, vm => vm ? new CreateLinkView(vm) : null),
             t.mapView(vm => vm.loadServerPolicyViewModel, vm => vm ? new LoadServerPolicyView(vm) : null),
