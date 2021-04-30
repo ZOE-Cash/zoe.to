@@ -22,15 +22,16 @@ import {LoadServerPolicyView} from "./policy/LoadServerPolicyView.js";
 export class RootView extends TemplateView {
 	render(t, vm) {
 		return t.div({className: "RootView"}, [
+			t.p(t.img({src: "images/logo.svg"})),
 			t.mapView(vm => vm.openLinkViewModel, vm => vm ? new OpenLinkView(vm) : null),
 			t.mapView(vm => vm.createLinkViewModel, vm => vm ? new CreateLinkView(vm) : null),
             t.mapView(vm => vm.loadServerPolicyViewModel, vm => vm ? new LoadServerPolicyView(vm) : null),
 			t.div({className: "footer"}, [
-				t.p(t.img({src: "images/matrix-logo.svg"})),
-				t.p(["This invite uses ", externalLink(t, "https://matrix.org", "Matrix"), ", an open network for secure, decentralized communication."]),
+				t.p(["This invite uses ", externalLink(t, "https://zoe.community", "ZOE Community"), ", a platform for secure, decentralized communication."]),
 				t.ul({className: "links"}, [
-					t.li(externalLink(t, "https://github.com/matrix-org/matrix.to", "GitHub project")),
-					t.li(externalLink(t, "https://github.com/matrix-org/matrix.to/tree/main/src/open/clients", "Add your app")),
+					t.li(externalLink(t, "https://zoe.community", "Official site")),
+					t.li(externalLink(t, "https://app.zoe.community", "Web App")),
+					t.li(externalLink(t, "https://t.me/zoecash", "Telegram")),
 					t.li({className: {hidden: vm => !vm.hasPreferences}},
 						t.button({className: "text", onClick: () => vm.clearPreferences()}, "Clear preferences")),
 				])
