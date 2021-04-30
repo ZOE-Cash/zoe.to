@@ -95,7 +95,7 @@ export class ClientViewModel extends ViewModel {
     // these are only shown in the install stage
 	_createInstallActions() {
 		let actions = [];
-		if (this._nativePlatform) {
+		/* if (this._nativePlatform) {
 			const nativeActions = (this._client.getInstallLinks(this._nativePlatform) || []).map(installLink => {
 				return {
 					label: installLink.getDescription(this._nativePlatform),
@@ -106,7 +106,7 @@ export class ClientViewModel extends ViewModel {
 				};
 			});
 			actions.push(...nativeActions);
-		}
+		} */
 		if (this._webPlatform) {
 			const webDeepLink = this._client.getDeepLink(this._webPlatform, this._link);
 			if (webDeepLink) {

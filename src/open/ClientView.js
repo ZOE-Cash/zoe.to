@@ -1,5 +1,5 @@
 /*
-Copyright 2020 The Matrix.org Foundation C.I.C.
+Copyright 2020 The ZOE Community Foundation C.I.C.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -114,8 +114,7 @@ class InstallClientView extends TemplateView {
 
 function showBack(t, vm) {
     return t.p({className: {caption: true, "back": true, hidden: vm => !vm.showBack}}, [
-        `Continue with ${vm.name} · `,
-        t.button({className: "text", onClick: () => vm.back()}, "Change"),
+        ``,
     ]);
 }
 
@@ -123,9 +122,7 @@ function renderAction(t, a) {
     let badgeUrl;
     switch (a.kind) {
         case "play-store": badgeUrl = "images/google-play-us.svg"; break;
-        case "fdroid": badgeUrl = "images/fdroid-badge.png"; break;
         case "apple-app-store": badgeUrl = "images/app-store-us-alt.svg"; break;
-        case "flathub": badgeUrl = "images/flathub-badge.svg"; break;
     }
     return t.a({
         href: a.url,

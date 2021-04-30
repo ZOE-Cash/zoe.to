@@ -1,6 +1,6 @@
 /*
 Copyright 2020 Bruno Windels <bruno@windels.cloud>
-Copyright 2020 The Matrix.org Foundation C.I.C.
+Copyright 2020 The ZOE Community Foundation C.I.C.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -61,7 +61,7 @@ async function build() {
     await assets.writeUnhashed(".well-known/apple-app-site-association", buildAppleAssociatedAppsFile(createClients()));
     await assets.writeUnhashed("index.html", await buildHtml(assets));
     const globalHash = assets.hashForAll();
-    console.log(`built matrix.to ${version} (${globalHash}) successfully with ${assets.size} files`);
+    console.log(`built zoe.to ${version} (${globalHash}) successfully with ${assets.size} files`);
 }
 
 async function buildHtml(assets) {

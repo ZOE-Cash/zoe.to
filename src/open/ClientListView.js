@@ -1,5 +1,5 @@
 /*
-Copyright 2020 The Matrix.org Foundation C.I.C.
+Copyright 2020 The ZOE Community Foundation C.I.C.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -37,23 +37,7 @@ class AllClientsView extends TemplateView {
 				return t.div({className: "list"}, clientList.map(clientViewModel => {
 					return t.view(new ClientView(clientViewModel));
 				}));
-			}),
-			t.div(t.label([
-				t.input({
-					type: "checkbox",
-					checked: vm.showUnsupportedPlatforms,
-					onChange: evt => vm.showUnsupportedPlatforms = evt.target.checked,
-				}),
-				"Show apps not available on my platform"
-			])),
-			t.div(t.label({className: "filterOption"}, [
-				t.input({
-					type: "checkbox",
-					checked: vm.showExperimental,
-					onChange: evt => vm.showExperimental = evt.target.checked,
-				}),
-				"Show experimental apps"
-			])),
+			})			
 		]);
 	}
 }

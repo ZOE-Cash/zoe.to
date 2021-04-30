@@ -1,5 +1,5 @@
 /*
-Copyright 2020 The Matrix.org Foundation C.I.C.
+Copyright 2020 The ZOE Community Foundation C.I.C.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,17 +18,14 @@ import {Maturity, Platform, LinkKind,
 	FDroidLink, AppleStoreLink, PlayStoreLink, WebsiteLink} from "../types.js";
 
 const trustedWebInstances = [
-    "app.element.io",   // first one is the default one
-    "develop.element.io",
-    "chat.fosdem.org",
-    "chat.mozilla.org",
+    "app.zoe.community",   // first one is the default one
 ];
 
 /**
  * Information on how to deep link to a given matrix client.
  */
 export class Element {
-	get id() { return "element.io"; }
+	get id() { return "app.zoe.community"; }
 
 	get platforms() {
 		return [
@@ -38,12 +35,12 @@ export class Element {
 		];
 	}
 
-    get icon() { return "images/client-icons/element.svg"; }
+    get icon() { return "images/zoe.svg"; }
     get appleAssociatedAppId() { return "7J4U792NQT.im.vector.app"; }
-	get name() {return "Element"; }
-	get description() { return 'Fully-featured Matrix client, used by millions.'; }
-	get homepage() { return "https://element.io"; }
-	get author() { return "Element"; }
+	get name() {return "ZOE Community"; }
+	get description() { return 'Fully-featured ZOE Community client, used by millions.'; }
+	get homepage() { return "https://app.zoe.community"; }
+	get author() { return "ZOE Community"; }
 	getMaturity(platform) { return Maturity.Stable; }
 
 	getDeepLink(platform, link) {
@@ -72,9 +69,9 @@ export class Element {
             }
 			return `https://${instanceHost}/#/${fragmentPath}`;
 		} else if (platform === Platform.Linux || platform === Platform.Windows || platform === Platform.macOS) {
-			return `element://vector/webapp/#/${fragmentPath}`;
+			return `zoecommunity://vector/webapp/#/${fragmentPath}`;
 		} else {
-            return `element://${fragmentPath}`;
+            return `zoecommunity://${fragmentPath}`;
         }
 	}
 
@@ -83,8 +80,8 @@ export class Element {
 	getInstallLinks(platform) {
 		switch (platform) {
 			case Platform.iOS: return [new AppleStoreLink('vector', 'id1083446067')];
-			case Platform.Android: return [new PlayStoreLink('im.vector.app'), new FDroidLink('im.vector.app')];
-			default: return [new WebsiteLink("https://element.io/get-started")];
+			case Platform.Android: return [new PlayStoreLink('com.zoe.cash')];
+			default: return [new WebsiteLink("https://app.zoe.community")];
 		}
 	}
 

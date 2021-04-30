@@ -1,5 +1,5 @@
 /*
-Copyright 2020 The Matrix.org Foundation C.I.C.
+Copyright 2020 The ZOE Community Foundation C.I.C.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -31,21 +31,14 @@ export class ServerConsentView extends TemplateView {
             t.p([
                 "Preview this link using the ",
                 t.strong(vm => vm.selectedServer || "…"),
-                " homeserver ",
                 t.span({className: {hidden: vm => !vm.selectedServer}}, [
                     " (",
                     t.a({
-                        href: vm => `#/policy/${vm.selectedServer}`,
+                        href: vm => `https://www.zoe.community/legal`,
                         target: "_blank",
                     }, "privacy policy"),
                     ")",
                 ]),
-                t.span({className: {hidden: vm => vm.showSelectServer}}, [
-                    ", ",
-                    useAnotherServer,
-                ]),
-                " or ",
-                continueWithoutPreview,
                 "."
             ]),
             t.form({action: "#", id: "serverConsentForm", onSubmit: evt => this._onSubmit(evt)}, [
