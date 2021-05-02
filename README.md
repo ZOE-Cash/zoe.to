@@ -50,4 +50,4 @@ You can discuss matrix.to in
 1. `cd matrix.to`
 1. `yarn`
 1. `yarn start`
-1. Go to http://localhost:5000 in your browser
+1. Go to http://localhost:8080 in your browser
